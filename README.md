@@ -7,7 +7,7 @@
 Package for getting weather data using a zipcode
 
 ## Usage
-python```
+```python
 from the_weather import *
 
 weather = Weather(22025)
