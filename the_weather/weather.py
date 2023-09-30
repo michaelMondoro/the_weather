@@ -4,8 +4,8 @@ from datetime import datetime
 class Weather:
     def __init__(self, zipcode):
         url = f"https://www.whsv.com/pf/api/v3/content/fetch/wx-current-conditions-v3?query={{'zipCode':'{zipcode}'}}&arc-site=whsv&_website=whsv"
-        res = requests.get(url)
-        data = res.json()['metric']
+        self.res = requests.get(url)
+        data = self.res.json()['metric']
         self.forecast = data['hourlyForecast']
         self.days = []
 
