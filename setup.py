@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="the_weather",
-    version="1.4.3",
+    version="1.4.4",
     author="Michael Mondoro",
     author_email="michaelmondoro@gmail.com",
     description="Package for getting weather data based on a zipcode",
