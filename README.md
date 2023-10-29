@@ -4,7 +4,7 @@
 [![Generic badge](https://img.shields.io/badge/the_weather-1.4.3-red.svg)](https://pypi.org/project/the-weather/)
 
 ## Package
-Package for getting weather data using a zipcode
+Package for getting weather data using a zipcode.
 
 ## Usage
 ```python
