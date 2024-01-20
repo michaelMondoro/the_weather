@@ -2,10 +2,13 @@ import requests
 from datetime import datetime
 
 class Weather:
-    def __init__(self, zipcode):
+    def __init__(self, zipcode, measure="imperial"):
+        if measure != "imperial" and measure != "metric":
+            raise TypeError("ERROR: please specify either 'metric' or 'imperial'")
+        
         url = f"https://www.whsv.com/pf/api/v3/content/fetch/wx-current-conditions-v3?query={{'zipCode':'{zipcode}'}}&arc-site=whsv&_website=whsv"
         self.res = requests.get(url)
-        data = self.res.json()['metric']
+        data = self.res.json()['imperial']
         self.forecast = data['hourlyForecast']
         self.days = []
 
@@ -42,7 +45,7 @@ class Forecast:
     
 
     def __str__(self):
-        return f"{self.day} {self.date} [{self.time}] - {self.temp}\xb0 {self.precip}: {self.desc}"
+        return f"{self.day} {self.date} [{self.time}] - [{self.temp}\xb0] [{self.precip}%]: {self.desc}"
     
     def __repr__(self):
-        return f"{self.day} {self.date} [{self.time}] - {self.temp}\xb0 {self.precip}: {self.desc}"
+        return f"{self.day} {self.date} [{self.time}] - [{self.temp}\xb0] [{self.precip}%]: {self.desc}"
