@@ -10,7 +10,7 @@ class Weather:
         self.res = requests.get(url)
         data = self.res.json()['imperial']
         self.forecast = data['hourlyForecast']
-        self.days = []
+        self.days = {}
 
         self.__get_forecast()
 
@@ -22,14 +22,13 @@ class Weather:
             t = datetime.strptime(time, "%H:%M")
             time = t.strftime("%I:%M %p")
 
-            self.days.append(Forecast(date, i['dayOfWeek'], time, i['precipChance'], i['temperature'], i['wxPhraseLong']))
+            if date not in self.days.keys():
+                self.days[date] = [Forecast(date, i['dayOfWeek'], time, i['precipChance'], i['temperature'], i['wxPhraseLong'])]
+            else:
+                self.days[date].append(Forecast(date, i['dayOfWeek'], time, i['precipChance'], i['temperature'], i['wxPhraseLong']))
 
     def daily_forecast(self, date):
-        items = []
-        for forecast in self.days:
-            if forecast.date == date:
-                items.append(forecast)
-        return items
+        return self.days[date]
     
     def get_all(self):
         return self.days
