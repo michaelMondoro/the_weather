@@ -8,6 +8,7 @@ on:
     branches: [ "main" ]
     paths:
       - the_weather/**
+      - tests/**
   pull_request:
     branches: [ "main" ]
 
