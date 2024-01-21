@@ -18,5 +18,9 @@ class WeatherTest(unittest.TestCase):
         weather = Weather(22801, "metric")
         self.assertEqual(weather.res.status_code, 200)
 
+    def test_imperial_measure(self):
+        weather = Weather(22801, "imperial")
+        self.assertEqual(weather.res.status_code, 200)
+
 if __name__ == '__main__':
     unittest.main()
