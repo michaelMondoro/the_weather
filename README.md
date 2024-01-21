@@ -3,7 +3,7 @@
 [![Generic badge](https://img.shields.io/badge/Python-3.7-yellow.svg)](https://shields.io/)
 [![Generic badge](https://img.shields.io/badge/the_weather-1.5-red.svg)](https://pypi.org/project/the-weather/)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/the_weather)
-![Build](https://github.com/github/docs/actions/workflows/python-package.yml/badge.svg)
+![Build](https://github.com/michaelMondoro/the_weather/actions/workflows/python-package.yml/badge.svg)
 
 ## Package
 Package for getting weather data using a zipcode.
