@@ -1,4 +1,7 @@
+import sys
 import unittest
+
+sys.path.append("../the_weather")
 from the_weather import *
 
 class WeatherTest(unittest.TestCase):
